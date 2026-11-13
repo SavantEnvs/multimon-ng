@@ -1,0 +1,10 @@
+project: savantenvs/multimon-ng
+target: fuzz_demod
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_demod/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_demod
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_demod/fuzz_demod.dict
+    timeout: 5

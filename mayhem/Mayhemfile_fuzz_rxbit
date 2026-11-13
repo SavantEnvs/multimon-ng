@@ -1,0 +1,10 @@
+project: savantenvs/multimon-ng
+target: fuzz_rxbit
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_rxbit/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_rxbit
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_rxbit/fuzz_rxbit.dict
+    timeout: 5
